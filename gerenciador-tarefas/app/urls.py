@@ -7,6 +7,8 @@ from .views.usuario_views import (
 )
 
 urlpatterns = [
+    path('dashboard/', usuario_views.dashboard_view, name='dashboard'),
+    path('cadastro-usuarios/', usuario_views.cadastro_usuarios_view, name='cadastro_usuarios'),
     path('', logar_usuario, name='logar_usuario'),  # Página de login
     path('dashboard/', dashboard_view, name='dashboard'),  # Página do dashboard
     path('tarefas/', listar_tarefas, name='listar_tarefas'),  # Lista de tarefas

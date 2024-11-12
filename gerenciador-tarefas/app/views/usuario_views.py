@@ -42,3 +42,18 @@ def logar_usuario(request):
 def deslogar_usuario(request):
     logout(request)
     return redirect('logar_usuario')
+
+def cadastro_usuarios_view(request):
+    if request.method == 'POST':
+        username = request.POST.get('username')
+        email = request.POST.get('email')
+        password = request.POST.get('password')
+        
+        # Cria um novo usuário
+        user = User.objects.create_user(username=username, email=email, password=password)
+        user.save()
+        
+        # Redireciona de volta para o dashboard após o cadastro
+        return redirect('dashboard')
+    
+    return render(request, 'cadastro_usuarios.html')
