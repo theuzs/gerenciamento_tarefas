@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block title %}Dashboard{% endblock %}
+
+{% block content %}
+<h1>Bem-vindo ao Dashboard</h1>
+<p>Escolha uma das opções abaixo:</p>
+<ul>
+    <li><a href="{% url 'listar_tarefas' %}">Gerenciar Tarefas</a></li>
+    <li><a href="{% url 'cadastrar_usuario' %}">Gerenciar Usuários</a></li>
+    <li><a href="{% url 'cadastro_usuarios' %}">Cadastro de Usuários</a></li>
+</ul>
+{% endblock %}
